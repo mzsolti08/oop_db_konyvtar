@@ -2,11 +2,27 @@
 
 namespace App;
 
+/**
+ * @property $DB_HOST
+ * @property $DB_DATABASE
+ * @property $DB_USER
+ * @property $DB_PASS
+ */
+
 class Config
 {
+    private static Config|null $instance = null;
+
+    public static function getInstance() : Config{
+        if (self::$instance == null){
+            self::$instance = new Config();
+        }
+        return self::$instance;
+    }
+
     protected array $config = array();
 
-    public function __construct()
+    private function __construct()
     {
         $this->config['DB_HOST'] = "localhost";
         $this->config['DB_USER'] = "konyvtar_user";
