@@ -9,11 +9,15 @@ require APP_PATH.'/exceptions/ViewNotFoundException.php';
 
 require_once APP_PATH.'App.php';
 require_once APP_PATH.'View.php';
+require_once APP_PATH.'Config.php';
 //include APP_PATH.'controllers/HomeController.php';
 
 use App\App;
-use App\Router;
+use App\Config;
 //use App\Controllers\HomeController;
+
+$config = new Config();
+//echo $config->DB_HOST;
 
 require_once __DIR__ . '/../routing.php';
 
