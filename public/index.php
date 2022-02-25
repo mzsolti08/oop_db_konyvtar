@@ -7,16 +7,15 @@ define('VIEW_PATH', __DIR__ . '/../resources/view/');
 require APP_PATH.'/exceptions/RouteNotFoundException.php';
 require APP_PATH.'/exceptions/ViewNotFoundException.php';
 
-include APP_PATH.'App.php';
-include APP_PATH.'Router.php';
-include APP_PATH.'View.php';
+require_once APP_PATH.'App.php';
+require_once APP_PATH.'View.php';
 //include APP_PATH.'controllers/HomeController.php';
 
 use App\App;
 use App\Router;
 //use App\Controllers\HomeController;
 
-require_once __DIR__ . '/../routing.php'
+require_once __DIR__ . '/../routing.php';
 
 if(!isset($router)){
     die("Route config error!");
