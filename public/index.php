@@ -11,6 +11,7 @@ require_once APP_PATH.'App.php';
 require_once APP_PATH.'View.php';
 require_once APP_PATH.'Config.php';
 require_once APP_PATH.'DB.php';
+require_once APP_PATH.'Model.php';
 //include APP_PATH.'controllers/HomeController.php';
 
 use App\App;

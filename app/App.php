@@ -24,7 +24,7 @@ class App
         $conf = Config::getInstance();
         self::$db = new DB([
             'host' => $conf->DB_HOST,
-            'database' => $conf->DATABASE,
+            'database' => $conf->DB_DATABASE,
             'user' => $conf->DB_USER,
             'password' => $conf->DB_PASS
         ]);
