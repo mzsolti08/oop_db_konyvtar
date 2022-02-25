@@ -8,7 +8,7 @@ use App\Exceptions\ViewNotFoundException;
 
 class App
 {
-    private static $db;
+    private static DB $db;
 
     private Router $router;
     private array $request;
@@ -16,7 +16,15 @@ class App
     public function __construct(Router $router, array $request)
     {
         $this->router = $router;
-        $this->request = $request; // ['uri'=> '/home/as/sad', 'method'=>'get']
+        $this->request = $request;
+
+        $conf = Config::getInstance();
+        self::$db = new DB([
+            'host' => $conf->DB_HOST,
+            'database' => $conf->DATABASE,
+            'user' => $conf->DB_USER,
+            'password' => $conf->DB_PASS
+        ]);
     }
 
     public function run(){
