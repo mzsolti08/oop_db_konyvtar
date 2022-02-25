@@ -9,6 +9,9 @@ use App\Exceptions\ViewNotFoundException;
 class App
 {
     private static DB $db;
+    public static function getDb() : DB{
+        return self::$db;
+    }
 
     private Router $router;
     private array $request;
